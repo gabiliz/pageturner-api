@@ -11,7 +11,7 @@ jobs:
       - name: Checkout source code
         uses: actions/checkout@v3
       - name: Docker Hub sign in
-        run: docker login -u ${{secrets.DOCKER_USERNAME}} -p ${{secrets.DOCKER_PASSWORD}}
+        run: docker login -u ${{secrets.DOCKER_USERNAME}} -p "${{secrets.DOCKER_PASSWORD}}"
       - name: Build Docker image
         run: docker build -t gabiliz/pageturner .
       - name: Push Docker image
